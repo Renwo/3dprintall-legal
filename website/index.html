@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — 3D Printall website</title>
+<style>
+  :root {
+    --bg: #F7F8FA;
+    --surface: #FFFFFF;
+    --border: #EEF0F3;
+    --text: #1F2430;
+    --text-2: #5B6472;
+    --accent: #2563EB;
+    --accent-tint: #2563EB14;
+    --success: #16A34A;
+    --success-tint: #16A34A14;
+    --orange: #EA580C;
+    --shadow: 0 1px 2px rgba(31,36,48,0.04), 0 8px 24px rgba(31,36,48,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12141A;
+      --surface: #1B1F29;
+      --border: #2A2F3B;
+      --text: #F1F3F7;
+      --text-2: #9AA3B2;
+      --accent: #6D9BFF;
+      --accent-tint: #6D9BFF1F;
+      --success: #34D399;
+      --success-tint: #34D3991F;
+      --orange: #FB923C;
+      --shadow: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  h1, h2 {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 20px 64px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--text);
+    flex: none;
+  }
+  .brand {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    flex: 1;
+    min-width: 0;
+  }
+  .brand small {
+    display: block;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 11.5px;
+    color: var(--text-2);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    background: var(--surface);
+    flex: none;
+  }
+  .lang-toggle button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--text-2);
+    font: inherit;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .lang-toggle button[aria-pressed="true"] {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .doc-head { padding-top: 28px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-tint);
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 28px; font-weight: 800; margin: 0 0 8px; }
+  .meta {
+    font-size: 13px;
+    color: var(--text-2);
+    font-variant-numeric: tabular-nums;
+    margin: 0 0 24px;
+  }
+
+  .tldr {
+    background: var(--success-tint);
+    border: 1px solid var(--success);
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .tldr .dot {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--success);
+    flex: none;
+    margin-top: 2px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tldr .dot svg { width: 12px; height: 12px; }
+  .tldr p { margin: 0; font-size: 14px; color: var(--text); }
+  .tldr strong { font-weight: 700; }
+
+  nav.toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+  nav.toc a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-2);
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 7px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  nav.toc a:hover { color: var(--accent); border-color: var(--accent); }
+
+  section { margin-bottom: 34px; scroll-margin-top: 90px; }
+  h2 {
+    font-size: 16.5px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  h2 .num {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-2);
+    font-variant-numeric: tabular-nums;
+  }
+  p { margin: 0 0 12px; color: var(--text); }
+  section p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); }
+
+  .card-list {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .item-card {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 13px 15px;
+    box-shadow: var(--shadow);
+  }
+  .item-card .badge {
+    flex: none;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px;
+  }
+  .item-card b { display: block; font-size: 13.5px; margin-bottom: 2px; }
+  .item-card span { font-size: 13px; color: var(--text-2); }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .contact-card .icon {
+    width: 42px; height: 42px; border-radius: 21px;
+    background: var(--accent-tint);
+    display: flex; align-items: center; justify-content: center;
+    flex: none;
+  }
+  .contact-card a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  footer a { color: inherit; }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-2);
+  }
+
+  [data-lang] { display: none; }
+  [data-lang].active { display: block; }
+  span[data-lang].active { display: inline; }
+  /* keep each block's own layout when its language is active */
+  nav.toc[data-lang] { display: none; }
+  nav.toc[data-lang].active, .tldr[data-lang].active { display: flex; }
+  .card-list[data-lang].active { display: grid; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo-dot"></div>
+  <div class="brand">3D PRINTALL<small>Website</small></div>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-set-lang="it" aria-pressed="true">IT</button>
+    <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="doc-head">
+    <span class="eyebrow" data-lang="it">Informativa legale</span>
+    <span class="eyebrow" data-lang="en">Legal notice</span>
+    <h1 data-lang="it">Privacy Policy del sito</h1>
+    <h1 data-lang="en">Website Privacy Policy</h1>
+    <p class="meta" data-lang="it">Ultimo aggiornamento: 17 ottobre 2026 — Sito: <a href="https://renwo.github.io/3d-printall-site/">renwo.github.io/3d-printall-site</a></p>
+    <p class="meta" data-lang="en">Last updated: October 17, 2026 — Website: <a href="https://renwo.github.io/3d-printall-site/">renwo.github.io/3d-printall-site</a></p>
+  </div>
+
+  <div class="tldr" data-lang="it">
+    <div class="dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <p><strong>In breve:</strong> il sito non usa cookie, non usa strumenti di analisi o pubblicità e non contiene moduli. Ricorda solo la lingua che scegli, nel tuo browser. Gli unici dati tecnici (come l'indirizzo IP) sono trattati dal servizio di hosting, GitHub Pages.</p>
+  </div>
+  <div class="tldr" data-lang="en">
+    <div class="dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <p><strong>In short:</strong> the website uses no cookies, no analytics or advertising tools, and has no forms. It only remembers the language you choose, in your browser. The only technical data (such as your IP address) is processed by the hosting service, GitHub Pages.</p>
+  </div>
+
+  <nav class="toc" data-lang="it">
+    <a href="#titolare">Titolare</a>
+    <a href="#navigazione">Dati di navigazione</a>
+    <a href="#cookie">Cookie e memoria locale</a>
+    <a href="#terze-parti">Nessun tracciamento</a>
+    <a href="#email">Contatti via email</a>
+    <a href="#link">Link esterni e affiliati</a>
+    <a href="#diritti">I tuoi diritti</a>
+    <a href="#modifiche">Modifiche</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <nav class="toc" data-lang="en">
+    <a href="#titolare">Data controller</a>
+    <a href="#navigazione">Browsing data</a>
+    <a href="#cookie">Cookies & local storage</a>
+    <a href="#terze-parti">No tracking</a>
+    <a href="#email">Email contact</a>
+    <a href="#link">External & affiliate links</a>
+    <a href="#diritti">Your rights</a>
+    <a href="#modifiche">Changes</a>
+    <a href="#contatti">Contact</a>
+  </nav>
+
+  <section id="titolare">
+    <h2 data-lang="it"><span class="num">01</span> Titolare del trattamento</h2>
+    <h2 data-lang="en"><span class="num">01</span> Data controller</h2>
+    <p data-lang="it">Il titolare del trattamento è <strong>Bartiromo Giuseppe</strong> (3D PrintAll), P.IVA 02753640032, contattabile all'indirizzo email indicato in fondo alla pagina.</p>
+    <p data-lang="en">The data controller is <strong>Bartiromo Giuseppe</strong> (3D PrintAll), Italian VAT no. IT02753640032, who can be reached at the email address listed at the bottom of this page.</p>
+    <p data-lang="it">Questa informativa riguarda solo il sito web. Per l'app <strong>3D Cost Estimation</strong> vale la sua <a href="../">privacy policy dedicata</a>.</p>
+    <p data-lang="en">This policy covers the website only. The <strong>3D Cost Estimation</strong> app has its own <a href="../">dedicated privacy policy</a>.</p>
+  </section>
+
+  <section id="navigazione">
+    <h2 data-lang="it"><span class="num">02</span> Dati di navigazione e hosting</h2>
+    <h2 data-lang="en"><span class="num">02</span> Browsing data and hosting</h2>
+    <p data-lang="it">Il sito è ospitato su <strong>GitHub Pages</strong>, un servizio di GitHub, Inc. Quando visiti una pagina, i server di GitHub ricevono automaticamente alcuni dati tecnici necessari a fornirla, tra cui l'<strong>indirizzo IP</strong>, il tipo di browser, la pagina richiesta e l'orario. GitHub li usa per erogare il servizio e garantirne la sicurezza; noi non vi abbiamo accesso e non li usiamo per identificarti.</p>
+    <p data-lang="en">The website is hosted on <strong>GitHub Pages</strong>, a service of GitHub, Inc. When you visit a page, GitHub's servers automatically receive some technical data needed to deliver it, including your <strong>IP address</strong>, browser type, the page requested and the time. GitHub uses this data to provide the service and keep it secure; we have no access to it and do not use it to identify you.</p>
+    <p data-lang="it">Il trattamento si basa sul legittimo interesse a rendere disponibile il sito in modo sicuro (art. 6.1.f GDPR). GitHub può trattare i dati anche negli Stati Uniti, con le garanzie descritte nella sua <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">informativa privacy</a>.</p>
+    <p data-lang="en">This processing is based on the legitimate interest in making the website available securely (Art. 6(1)(f) GDPR). GitHub may process data in the United States too, with the safeguards described in its <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">privacy statement</a>.</p>
+  </section>
+
+  <section id="cookie">
+    <h2 data-lang="it"><span class="num">03</span> Cookie e memoria locale</h2>
+    <h2 data-lang="en"><span class="num">03</span> Cookies and local storage</h2>
+    <p data-lang="it">Il sito <strong>non usa cookie</strong>. Usa soltanto la memoria locale del tuo browser (localStorage) per ricordare un'unica informazione tecnica:</p>
+    <p data-lang="en">The website <strong>uses no cookies</strong>. It only uses your browser's local storage (localStorage) to remember a single technical setting:</p>
+    <div class="card-list" data-lang="it">
+      <div class="item-card"><span class="badge"></span><div><b>Lingua preferita</b><span>Italiano o inglese, se la scegli con il selettore in alto. Resta solo sul tuo dispositivo e non viene inviata a nessuno.</span></div></div>
+    </div>
+    <div class="card-list" data-lang="en">
+      <div class="item-card"><span class="badge"></span><div><b>Preferred language</b><span>Italian or English, if you pick one with the switch at the top. It stays on your device only and is never sent anywhere.</span></div></div>
+    </div>
+    <p data-lang="it">Trattandosi di un'informazione strettamente necessaria a una funzione che richiedi tu, non è richiesto il consenso. Puoi cancellarla in qualsiasi momento eliminando i dati del sito dalle impostazioni del browser.</p>
+    <p data-lang="en">As this is strictly necessary for a feature you request, no consent is required. You can delete it at any time by clearing the site's data in your browser settings.</p>
+  </section>
+
+  <section id="terze-parti">
+    <h2 data-lang="it"><span class="num">04</span> Nessun tracciamento</h2>
+    <h2 data-lang="en"><span class="num">04</span> No tracking</h2>
+    <p data-lang="it">Il sito <strong>non integra strumenti di analisi statistica, pubblicità, pixel di tracciamento o contenuti incorporati</strong> di terze parti (come video o post social). Caratteri tipografici e icone sono ospitati sul sito stesso: navigando non vengono contattati altri server oltre a quelli di GitHub Pages.</p>
+    <p data-lang="en">The website <strong>does not integrate any analytics, advertising, tracking pixels or embedded third-party content</strong> (such as videos or social posts). Fonts and icons are hosted on the website itself: while browsing, no servers other than GitHub Pages are contacted.</p>
+  </section>
+
+  <section id="email">
+    <h2 data-lang="it"><span class="num">05</span> Contatti via email</h2>
+    <h2 data-lang="en"><span class="num">05</span> Email contact</h2>
+    <p data-lang="it">Il sito non contiene moduli. Se ci scrivi via email, useremo il tuo indirizzo e il contenuto del messaggio solo per risponderti ed eventualmente gestire la richiesta (ad esempio una proposta di collaborazione), per il tempo necessario a farlo. La base giuridica è la gestione della tua richiesta (art. 6.1.b GDPR).</p>
+    <p data-lang="en">The website has no forms. If you email us, we will use your address and the content of your message only to reply and, where relevant, handle your request (for example a collaboration proposal), for as long as needed to do so. The legal basis is handling your request (Art. 6(1)(b) GDPR).</p>
+  </section>
+
+  <section id="link">
+    <h2 data-lang="it"><span class="num">06</span> Link esterni e link affiliati</h2>
+    <h2 data-lang="en"><span class="num">06</span> External and affiliate links</h2>
+    <p data-lang="it">Il sito contiene link a servizi esterni, che si aprono fuori dal sito e seguono le proprie informative privacy:</p>
+    <p data-lang="en">The website contains links to external services, which open outside the website and follow their own privacy policies:</p>
+    <div class="card-list" data-lang="it">
+      <div class="item-card"><span class="badge" style="background:var(--orange)"></span><div><b>Social e piattaforme</b><span>Instagram, TikTok, YouTube, Facebook, Telegram, MakerWorld, Cults3D, Nexprint e Google Play.</span></div></div>
+      <div class="item-card"><span class="badge" style="background:var(--orange)"></span><div><b>Link affiliati</b><span>Alcuni link a negozi partner (es. HOTO, LaserPecker, Elegoo, Snapmaker, Tripo) sono link di affiliazione: se acquisti dopo il clic, riceviamo una commissione. Il partner o la rete di affiliazione può usare cookie sul proprio sito per attribuire l'acquisto, secondo la propria informativa.</span></div></div>
+    </div>
+    <div class="card-list" data-lang="en">
+      <div class="item-card"><span class="badge" style="background:var(--orange)"></span><div><b>Social networks and platforms</b><span>Instagram, TikTok, YouTube, Facebook, Telegram, MakerWorld, Cults3D, Nexprint and Google Play.</span></div></div>
+      <div class="item-card"><span class="badge" style="background:var(--orange)"></span><div><b>Affiliate links</b><span>Some links to partner shops (e.g. HOTO, LaserPecker, Elegoo, Snapmaker, Tripo) are affiliate links: if you buy after clicking, we receive a commission. The partner or affiliate network may use cookies on its own website to attribute the purchase, under its own privacy policy.</span></div></div>
+    </div>
+    <p data-lang="it">Il sito non trasmette i tuoi dati a questi servizi: ciò che accade dopo il clic è regolato dalle loro informative.</p>
+    <p data-lang="en">The website does not pass your data to these services: what happens after you click is governed by their policies.</p>
+  </section>
+
+  <section id="diritti">
+    <h2 data-lang="it"><span class="num">07</span> I tuoi diritti</h2>
+    <h2 data-lang="en"><span class="num">07</span> Your rights</h2>
+    <p data-lang="it">Ai sensi degli articoli 15–21 del GDPR puoi chiedere in qualsiasi momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità e opporti al trattamento, scrivendo all'indirizzo qui sotto. Hai inoltre il diritto di proporre reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+    <p data-lang="en">Under Articles 15–21 of the GDPR you can request access to your data, rectification, erasure, restriction of processing and portability, and object to processing at any time, by writing to the address below. You also have the right to lodge a complaint with the Italian data protection authority, the <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+  </section>
+
+  <section id="modifiche">
+    <h2 data-lang="it"><span class="num">08</span> Modifiche a questa informativa</h2>
+    <h2 data-lang="en"><span class="num">08</span> Changes to this policy</h2>
+    <p data-lang="it">Questa informativa può essere aggiornata, ad esempio se il sito aggiunge nuove funzioni. La data di "ultimo aggiornamento" in cima alla pagina indica sempre la versione più recente.</p>
+    <p data-lang="en">This policy may be updated, for example if new features are added to the website. The "last updated" date at the top of the page always shows the most recent version.</p>
+  </section>
+
+  <section id="contatti">
+    <h2 data-lang="it"><span class="num">09</span> Contatti</h2>
+    <h2 data-lang="en"><span class="num">09</span> Contact</h2>
+    <p data-lang="it">Per domande su questa informativa o per esercitare i tuoi diritti, scrivi a:</p>
+    <p data-lang="en">For questions about this policy or to exercise your rights, write to:</p>
+    <div class="contact-card">
+      <div class="icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+      </div>
+      <a href="mailto:3d.printall.contacts@gmail.com">3d.printall.contacts@gmail.com</a>
+    </div>
+  </section>
+
+  <footer data-lang="it">3D PrintAll — Bartiromo Giuseppe · P.IVA 02753640032 · <a href="https://renwo.github.io/3d-printall-site/">Torna al sito</a></footer>
+  <footer data-lang="en">3D PrintAll — Bartiromo Giuseppe · VAT IT02753640032 · <a href="https://renwo.github.io/3d-printall-site/">Back to the website</a></footer>
+
+</div>
+
+<script>
+(function () {
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('pp-lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.getAttribute('data-set-lang')); });
+  });
+  // Saved choice first; otherwise Italian only for Italian browsers, like the website
+  var browser = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+  var initial = /^it(-|$)/i.test(browser) ? 'it' : 'en';
+  try {
+    var saved = localStorage.getItem('pp-lang');
+    if (saved === 'it' || saved === 'en') initial = saved;
+  } catch (e) {}
+  setLang(initial);
+})();
+</script>
+</body>
+</html>

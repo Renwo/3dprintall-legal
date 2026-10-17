@@ -260,6 +260,10 @@
   [data-lang] { display: none; }
   [data-lang].active { display: block; }
   span[data-lang].active { display: inline; }
+  /* keep each block's own layout when its language is active */
+  nav.toc[data-lang] { display: none; }
+  nav.toc[data-lang].active, .tldr[data-lang].active { display: flex; }
+  .card-list[data-lang].active { display: grid; }
 </style>
 </head>
 <body>
