@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Condizioni di vendita — 3D Printall</title>
+<style>
+  :root {
+    --bg: #F7F8FA;
+    --surface: #FFFFFF;
+    --border: #EEF0F3;
+    --text: #1F2430;
+    --text-2: #5B6472;
+    --accent: #2563EB;
+    --accent-tint: #2563EB14;
+    --success: #16A34A;
+    --success-tint: #16A34A14;
+    --orange: #EA580C;
+    --shadow: 0 1px 2px rgba(31,36,48,0.04), 0 8px 24px rgba(31,36,48,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12141A;
+      --surface: #1B1F29;
+      --border: #2A2F3B;
+      --text: #F1F3F7;
+      --text-2: #9AA3B2;
+      --accent: #6D9BFF;
+      --accent-tint: #6D9BFF1F;
+      --success: #34D399;
+      --success-tint: #34D3991F;
+      --orange: #FB923C;
+      --shadow: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  h1, h2 {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 20px 64px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--text);
+    flex: none;
+  }
+  .brand {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    flex: 1;
+    min-width: 0;
+  }
+  .brand small {
+    display: block;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 11.5px;
+    color: var(--text-2);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    background: var(--surface);
+    flex: none;
+  }
+  .lang-toggle button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--text-2);
+    font: inherit;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .lang-toggle button[aria-pressed="true"] {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .doc-head { padding-top: 28px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-tint);
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 28px; font-weight: 800; margin: 0 0 8px; }
+  .meta {
+    font-size: 13px;
+    color: var(--text-2);
+    font-variant-numeric: tabular-nums;
+    margin: 0 0 24px;
+  }
+
+  .tldr {
+    background: var(--success-tint);
+    border: 1px solid var(--success);
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .tldr .dot {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--success);
+    flex: none;
+    margin-top: 2px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tldr .dot svg { width: 12px; height: 12px; }
+  .tldr p { margin: 0; font-size: 14px; color: var(--text); }
+  .tldr strong { font-weight: 700; }
+
+  nav.toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+  nav.toc a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-2);
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 7px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  nav.toc a:hover { color: var(--accent); border-color: var(--accent); }
+
+  section { margin-bottom: 34px; scroll-margin-top: 90px; }
+  h2 {
+    font-size: 16.5px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  h2 .num {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-2);
+    font-variant-numeric: tabular-nums;
+  }
+  p { margin: 0 0 12px; color: var(--text); }
+  section p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); }
+
+  .card-list {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .item-card {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 13px 15px;
+    box-shadow: var(--shadow);
+  }
+  .item-card .badge {
+    flex: none;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px;
+  }
+  .item-card b { display: block; font-size: 13.5px; margin-bottom: 2px; }
+  .item-card span { font-size: 13px; color: var(--text-2); }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .contact-card .icon {
+    width: 42px; height: 42px; border-radius: 21px;
+    background: var(--accent-tint);
+    display: flex; align-items: center; justify-content: center;
+    flex: none;
+  }
+  .contact-card a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  footer a { color: inherit; }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-2);
+  }
+
+  [data-lang] { display: none; }
+  [data-lang].active { display: block; }
+  span[data-lang].active { display: inline; }
+  /* keep each block's own layout when its language is active */
+  nav.toc[data-lang] { display: none; }
+  nav.toc[data-lang].active, .tldr[data-lang].active { display: flex; }
+  .card-list[data-lang].active { display: grid; }
+  .brand small[data-lang]:not(.active) { display: none; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo-dot"></div>
+  <div class="brand">3D PRINTALL<small data-lang="it">Servizi di stampa 3D e incisione laser</small><small data-lang="en">3D printing & laser engraving services</small></div>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-set-lang="it" aria-pressed="true">IT</button>
+    <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="doc-head">
+    <span class="eyebrow" data-lang="it">Informativa legale</span>
+    <span class="eyebrow" data-lang="en">Legal notice</span>
+    <h1 data-lang="it">Condizioni di vendita</h1>
+    <h1 data-lang="en">Terms of sale</h1>
+    <p class="meta" data-lang="it">Ultimo aggiornamento: 17 ottobre 2026 — Servizi di stampa 3D e incisione laser su richiesta</p>
+    <p class="meta" data-lang="en">Last updated: October 17, 2026 — On-demand 3D printing and laser engraving services</p>
+  </div>
+
+  <div class="tldr" data-lang="it">
+    <div class="dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <p><strong>In breve:</strong> ogni lavoro parte da un preventivo via email con prezzo, tempi e spedizione. Il contratto si conclude quando accetti il preventivo. Paghi con bonifico, spedisco in Italia e in Europa. Essendo oggetti realizzati su misura, non si applica il diritto di recesso, ma resta valida la garanzia legale.</p>
+  </div>
+  <div class="tldr" data-lang="en">
+    <div class="dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <p><strong>In short:</strong> every job starts with a quote by email, with price, timing and shipping. The contract is formed when you accept the quote. You pay by bank transfer, and I ship across Italy and Europe. As items are made to order, the right of withdrawal does not apply, but the legal guarantee remains valid.</p>
+  </div>
+
+  <nav class="toc" data-lang="it">
+    <a href="#venditore">Venditore</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#preventivo">Preventivo e ordine</a>
+    <a href="#pagamento">Prezzi e pagamento</a>
+    <a href="#realizzazione">Realizzazione</a>
+    <a href="#spedizione">Spedizione</a>
+    <a href="#recesso">Recesso</a>
+    <a href="#garanzia">Garanzia</a>
+    <a href="#legge">Legge applicabile</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <nav class="toc" data-lang="en">
+    <a href="#venditore">Seller</a>
+    <a href="#servizi">Services</a>
+    <a href="#preventivo">Quote and order</a>
+    <a href="#pagamento">Prices and payment</a>
+    <a href="#realizzazione">Production</a>
+    <a href="#spedizione">Shipping</a>
+    <a href="#recesso">Withdrawal</a>
+    <a href="#garanzia">Warranty</a>
+    <a href="#legge">Governing law</a>
+    <a href="#contatti">Contact</a>
+  </nav>
+
+  <section id="venditore">
+    <h2 data-lang="it"><span class="num">01</span> Venditore</h2>
+    <h2 data-lang="en"><span class="num">01</span> Seller</h2>
+    <p data-lang="it">I servizi sono offerti da <strong>Bartiromo Giuseppe</strong> (3D PrintAll), P.IVA 02753640032, email <a href="mailto:3d.printall.contacts@gmail.com">3d.printall.contacts@gmail.com</a>.</p>
+    <p data-lang="en">The services are provided by <strong>Bartiromo Giuseppe</strong> (3D PrintAll), Italian VAT no. IT02753640032, email <a href="mailto:3d.printall.contacts@gmail.com">3d.printall.contacts@gmail.com</a>.</p>
+  </section>
+
+  <section id="servizi">
+    <h2 data-lang="it"><span class="num">02</span> Servizi e ambito</h2>
+    <h2 data-lang="en"><span class="num">02</span> Services and scope</h2>
+    <p data-lang="it">Queste condizioni regolano i servizi di <strong>stampa 3D</strong> e <strong>incisione laser</strong> su richiesta, rivolti sia a privati (consumatori) sia ad aziende e professionisti. Il sito non è un negozio online: non è possibile acquistare o pagare direttamente sul sito, e ogni lavoro viene concordato via email.</p>
+    <p data-lang="en">These terms govern on-demand <strong>3D printing</strong> and <strong>laser engraving</strong> services, offered both to private individuals (consumers) and to businesses and professionals. The website is not an online shop: nothing can be bought or paid for directly on the website, and every job is agreed by email.</p>
+  </section>
+
+  <section id="preventivo">
+    <h2 data-lang="it"><span class="num">03</span> Preventivo e conclusione del contratto</h2>
+    <h2 data-lang="en"><span class="num">03</span> Quote and conclusion of the contract</h2>
+    <p data-lang="it">Ogni lavoro parte da una tua richiesta, a cui rispondo con un <strong>preventivo scritto</strong> via email. Il preventivo indica la descrizione del lavoro, i materiali, il prezzo totale, i costi di spedizione, le modalità di pagamento, i tempi indicativi e la sua validità.</p>
+    <p data-lang="en">Every job starts with your request, to which I reply with a <strong>written quote</strong> by email. The quote states the description of the job, materials, total price, shipping costs, payment terms, indicative timing and how long the quote is valid.</p>
+    <p data-lang="it">Il contratto si conclude quando <strong>accetti il preventivo per iscritto</strong> (ad esempio rispondendo all'email). Eventuali modifiche richieste dopo l'accettazione possono comportare un nuovo preventivo.</p>
+    <p data-lang="en">The contract is formed when you <strong>accept the quote in writing</strong> (for example by replying to the email). Changes requested after acceptance may require a new quote.</p>
+  </section>
+
+  <section id="pagamento">
+    <h2 data-lang="it"><span class="num">04</span> Prezzi e pagamento</h2>
+    <h2 data-lang="en"><span class="num">04</span> Prices and payment</h2>
+    <p data-lang="it">I prezzi sono in euro e sono quelli indicati nel preventivo, comprensivi dei costi di spedizione. Il pagamento avviene tramite <strong>bonifico bancario</strong>:</p>
+    <p data-lang="en">Prices are in euro and are those stated in the quote, including shipping costs. Payment is made by <strong>bank transfer</strong>:</p>
+    <div class="card-list" data-lang="it">
+      <div class="item-card"><span class="badge"></span><div><b>Lavori di piccola entità</b><span>Pagamento dell'intero importo a lavoro finito, prima della spedizione.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Lavori più impegnativi</b><span>Un acconto all'accettazione del preventivo e il saldo prima della spedizione. L'importo dell'acconto è indicato nel preventivo.</span></div></div>
+    </div>
+    <div class="card-list" data-lang="en">
+      <div class="item-card"><span class="badge"></span><div><b>Smaller jobs</b><span>Full payment once the work is finished, before shipping.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Larger jobs</b><span>A deposit when the quote is accepted and the balance before shipping. The deposit amount is stated in the quote.</span></div></div>
+    </div>
+    <p data-lang="it">Per ogni ordine viene emessa regolare fattura.</p>
+    <p data-lang="en">An invoice is issued for every order.</p>
+  </section>
+
+  <section id="realizzazione">
+    <h2 data-lang="it"><span class="num">05</span> Realizzazione e tempi</h2>
+    <h2 data-lang="en"><span class="num">05</span> Production and timing</h2>
+    <p data-lang="it">La lavorazione inizia dopo l'accettazione del preventivo e, se previsto, dopo il ricevimento dell'acconto. I tempi indicati sono stime e possono variare per cause non dipendenti da me; in caso di ritardi significativi ti avviso.</p>
+    <p data-lang="en">Work starts once the quote is accepted and, where applicable, once the deposit is received. The stated timing is an estimate and may vary for reasons beyond my control; I will let you know of any significant delay.</p>
+    <p data-lang="it">Stampa 3D e incisione laser sono lavorazioni artigianali: <strong>lievi differenze</strong> di colore, finitura superficiale, linee di strato o intensità dell'incisione rispetto a foto o anteprime sono normali e non costituiscono un difetto.</p>
+    <p data-lang="en">3D printing and laser engraving are craft processes: <strong>slight differences</strong> in colour, surface finish, layer lines or engraving intensity compared with photos or previews are normal and are not a defect.</p>
+    <p data-lang="it">Se mi invii file, loghi o immagini, garantisci di avere il diritto di usarli e che non violano diritti di terzi (ad esempio marchi o diritti d'autore). Posso rifiutare lavori con contenuti illeciti o che violano diritti altrui.</p>
+    <p data-lang="en">If you send me files, logos or images, you confirm that you have the right to use them and that they do not infringe third-party rights (such as trademarks or copyright). I may decline jobs with unlawful content or content that infringes the rights of others.</p>
+  </section>
+
+  <section id="spedizione">
+    <h2 data-lang="it"><span class="num">06</span> Spedizione</h2>
+    <h2 data-lang="en"><span class="num">06</span> Shipping</h2>
+    <p data-lang="it">Spedisco tramite corriere in <strong>Italia e nei Paesi dell'Unione Europea</strong>. Non è previsto il ritiro di persona. Costi e tempi di spedizione sono indicati nel preventivo.</p>
+    <p data-lang="en">I ship by courier across <strong>Italy and the European Union</strong>. In-person pick-up is not available. Shipping costs and timing are stated in the quote.</p>
+    <p data-lang="it">Al momento della consegna controlla che il pacco sia integro. Se è danneggiato, segnalalo al corriere e scrivimi al più presto, possibilmente con alcune foto, così da gestire insieme la pratica.</p>
+    <p data-lang="en">On delivery, check that the parcel is intact. If it is damaged, report it to the courier and write to me as soon as possible, ideally with a few photos, so we can handle it together.</p>
+  </section>
+
+  <section id="recesso">
+    <h2 data-lang="it"><span class="num">07</span> Diritto di recesso</h2>
+    <h2 data-lang="en"><span class="num">07</span> Right of withdrawal</h2>
+    <p data-lang="it">Tutti gli oggetti sono realizzati <strong>su misura</strong>, in base alle specifiche del cliente, o sono chiaramente personalizzati. Per questo, ai sensi dell'art. 59, comma 1, lett. c) del Codice del Consumo (D.Lgs. 206/2005), <strong>il diritto di recesso non si applica</strong>.</p>
+    <p data-lang="en">All items are <strong>made to order</strong> according to the customer's specifications, or are clearly personalised. For this reason, under Article 59(1)(c) of the Italian Consumer Code (Legislative Decree 206/2005), <strong>the right of withdrawal does not apply</strong>.</p>
+  </section>
+
+  <section id="garanzia">
+    <h2 data-lang="it"><span class="num">08</span> Garanzia e difetti</h2>
+    <h2 data-lang="en"><span class="num">08</span> Warranty and defects</h2>
+    <p data-lang="it">Se sei un consumatore, hai diritto alla <strong>garanzia legale di conformità</strong> prevista dagli articoli 128 e seguenti del Codice del Consumo, per i difetti di conformità che si manifestano entro due anni dalla consegna. Per le aziende e i professionisti si applicano le norme del Codice Civile sulla vendita.</p>
+    <p data-lang="en">If you are a consumer, you are entitled to the <strong>legal guarantee of conformity</strong> under Articles 128 and following of the Italian Consumer Code, for lack of conformity that becomes apparent within two years of delivery. For businesses and professionals, the Italian Civil Code rules on sales apply.</p>
+    <p data-lang="it">Se l'oggetto non corrisponde a quanto concordato o presenta un difetto, scrivimi con una descrizione e alcune foto: valuteremo insieme la riparazione, la sostituzione o il rimborso.</p>
+    <p data-lang="en">If the item does not match what was agreed or has a defect, write to me with a description and a few photos: together we will consider repair, replacement or a refund.</p>
+    <p data-lang="it">Non sono considerati difetti le lievi differenze descritte al punto 05, né i danni dovuti a uso improprio o diverso da quello concordato.</p>
+    <p data-lang="en">The slight differences described in section 05, and damage caused by improper use or use other than as agreed, are not considered defects.</p>
+  </section>
+
+  <section id="legge">
+    <h2 data-lang="it"><span class="num">09</span> Legge applicabile e foro competente</h2>
+    <h2 data-lang="en"><span class="num">09</span> Governing law and jurisdiction</h2>
+    <p data-lang="it">Queste condizioni sono regolate dalla legge italiana. Per i consumatori resta salva l'applicazione delle norme di tutela più favorevoli del Paese di residenza e la competenza del giudice del luogo di residenza o domicilio del consumatore.</p>
+    <p data-lang="en">These terms are governed by Italian law. For consumers, this does not affect the more protective rules of their country of residence or the jurisdiction of the courts of the consumer's place of residence or domicile.</p>
+    <p data-lang="it">Il trattamento dei dati personali è descritto nella <a href="../website/">privacy policy del sito</a>.</p>
+    <p data-lang="en">The processing of personal data is described in the <a href="../website/">website privacy policy</a>.</p>
+  </section>
+
+  <section id="contatti">
+    <h2 data-lang="it"><span class="num">10</span> Contatti</h2>
+    <h2 data-lang="en"><span class="num">10</span> Contact</h2>
+    <p data-lang="it">Per domande su queste condizioni o su un ordine, scrivi a:</p>
+    <p data-lang="en">For questions about these terms or an order, write to:</p>
+    <div class="contact-card">
+      <div class="icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+      </div>
+      <a href="mailto:3d.printall.contacts@gmail.com">3d.printall.contacts@gmail.com</a>
+    </div>
+  </section>
+
+  <footer data-lang="it">3D PrintAll — Bartiromo Giuseppe · P.IVA 02753640032 · <a href="https://renwo.github.io/3d-printall-site/">Torna al sito</a></footer>
+  <footer data-lang="en">3D PrintAll — Bartiromo Giuseppe · VAT IT02753640032 · <a href="https://renwo.github.io/3d-printall-site/">Back to the website</a></footer>
+
+</div>
+
+<script>
+(function () {
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('pp-lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.getAttribute('data-set-lang')); });
+  });
+  // Saved choice first; otherwise Italian only for Italian browsers, like the website
+  var browser = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+  var initial = /^it(-|$)/i.test(browser) ? 'it' : 'en';
+  try {
+    var saved = localStorage.getItem('pp-lang');
+    if (saved === 'it' || saved === 'en') initial = saved;
+  } catch (e) {}
+  setLang(initial);
+})();
+</script>
+</body>
+</html>
