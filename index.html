@@ -284,23 +284,25 @@
     <span class="eyebrow" data-lang="en">Legal notice</span>
     <h1 data-lang="it">Privacy Policy</h1>
     <h1 data-lang="en">Privacy Policy</h1>
-    <p class="meta" data-lang="it">Ultimo aggiornamento: 19 settembre 2026 — App: 3D Cost Estimation (3D Printall)</p>
-    <p class="meta" data-lang="en">Last updated: September 19, 2026 — App: 3D Cost Estimation (3D Printall)</p>
+    <p class="meta" data-lang="it">Ultimo aggiornamento: 28 ottobre 2026 — App: 3D Cost Estimation (3D Printall)</p>
+    <p class="meta" data-lang="en">Last updated: October 28, 2026 — App: 3D Cost Estimation (3D Printall)</p>
   </div>
 
   <div class="tldr" data-lang="it">
     <div class="dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <p><strong>In breve:</strong> l'app non raccoglie, non trasmette e non vende alcun dato personale. Filamenti, resine, stampanti e preferenze restano salvati solo sul tuo dispositivo. Non è richiesta alcuna registrazione.</p>
+    <p><strong>In breve:</strong> noi non raccogliamo, non riceviamo e non vendiamo alcun dato personale. Filamenti, stampanti, preventivi, dati della tua attività e dei tuoi clienti e preferenze restano salvati solo sul tuo dispositivo. Escono dal telefono solo se scegli tu di condividerli (preventivi PDF, file di backup) o tramite il backup automatico del sistema operativo. Non è richiesta alcuna registrazione.</p>
   </div>
   <div class="tldr" data-lang="en">
     <div class="dot"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <p><strong>In short:</strong> the app does not collect, transmit or sell any personal data. Filaments, resins, printers and preferences stay saved only on your device. No account or sign-up is required.</p>
+    <p><strong>In short:</strong> we do not collect, receive or sell any personal data. Filaments, printers, quotes, your business and customer details and your preferences stay saved only on your device. They leave your phone only if you choose to share them (PDF quotes, backup files) or through your operating system's automatic backup. No account or sign-up is required.</p>
   </div>
 
   <nav class="toc" data-lang="it">
     <a href="#titolare">Titolare</a>
     <a href="#dati-locali">Dati salvati sul dispositivo</a>
+    <a href="#clienti">Dati dei tuoi clienti</a>
     <a href="#preventivi">Preventivi PDF</a>
+    <a href="#backup">Backup ed esportazione</a>
     <a href="#terze-parti">Servizi di terze parti</a>
     <a href="#permessi">Permessi</a>
     <a href="#minori">Minori</a>
@@ -311,7 +313,9 @@
   <nav class="toc" data-lang="en">
     <a href="#titolare">Data controller</a>
     <a href="#dati-locali">Data stored on device</a>
+    <a href="#clienti">Your customers' data</a>
     <a href="#preventivi">PDF quotes</a>
+    <a href="#backup">Backup & export</a>
     <a href="#terze-parti">Third-party services</a>
     <a href="#permessi">Permissions</a>
     <a href="#minori">Children</a>
@@ -336,26 +340,56 @@
       <div class="item-card"><span class="badge"></span><div><b>Filamenti e resine</b><span>Materiale, marca, prezzo, quantità residua e colore che inserisci tu.</span></div></div>
       <div class="item-card"><span class="badge"></span><div><b>Stampanti</b><span>Nome e potenza (Watt) delle stampanti che aggiungi.</span></div></div>
       <div class="item-card"><span class="badge"></span><div><b>Impostazioni</b><span>Lingua, valuta, costo elettricità e altri parametri di calcolo.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Storico preventivi</b><span>I preventivi che salvi: data, numero progressivo, prezzo, costi, materiali e grammi usati, ore di stampa, stato "completato" e, se li inserisci, nome del cliente e note.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Dati della tua attività</b><span>Nome, indirizzo, partita IVA, email, telefono, sito, logo e testi che scegli di stampare sui preventivi PDF. Il logo è un'immagine che selezioni tu dalla galleria.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Statistiche</b><span>Ricavi, margini e consumi sono calcolati sul momento a partire dallo storico preventivi, direttamente sul dispositivo.</span></div></div>
     </div>
     <div class="card-list" data-lang="en">
       <div class="item-card"><span class="badge"></span><div><b>Filaments and resins</b><span>Material, brand, price, remaining quantity and color you enter.</span></div></div>
       <div class="item-card"><span class="badge"></span><div><b>Printers</b><span>Name and wattage of the printers you add.</span></div></div>
       <div class="item-card"><span class="badge"></span><div><b>Settings</b><span>Language, currency, electricity cost and other calculation parameters.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Quote history</b><span>The quotes you save: date, progressive number, price, costs, materials and grams used, printing hours, "completed" status and, if you enter them, customer name and notes.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Your business details</b><span>Name, address, VAT number, email, phone, website, logo and texts you choose to print on PDF quotes. The logo is an image you pick from your gallery.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Statistics</b><span>Revenue, margins and consumption are calculated on the fly from the quote history, directly on your device.</span></div></div>
     </div>
     <p data-lang="it">Questi dati <strong>non vengono mai inviati</strong> a noi, a server remoti o a terze parti: restano unicamente nella memoria locale dell'app (AsyncStorage), accessibile solo dal tuo dispositivo.</p>
     <p data-lang="en">This data is <strong>never sent</strong> to us, to remote servers or to third parties: it stays only in the app's local storage (AsyncStorage), accessible only from your own device.</p>
   </section>
 
+  <section id="clienti">
+    <h2 data-lang="it"><span class="num">03</span> Dati dei tuoi clienti</h2>
+    <h2 data-lang="en"><span class="num">03</span> Your customers' data</h2>
+    <p data-lang="it">Su ogni preventivo puoi indicare, se vuoi, il nome di un cliente e delle note. Questi campi sono facoltativi e li compili tu: l'app li conserva solo sul tuo dispositivo e <strong>noi non vi abbiamo mai accesso</strong>. Se li usi per la tua attività, sei tu a decidere quali dati dei tuoi clienti inserire e come usarli, nel rispetto delle norme sulla protezione dei dati che si applicano a te (ad esempio il GDPR). Ti consigliamo di inserire solo le informazioni necessarie per il preventivo.</p>
+    <p data-lang="en">On each quote you can optionally enter a customer name and notes. These fields are optional and filled in by you: the app keeps them only on your device and <strong>we never have access to them</strong>. If you use them for your business, you decide which customer data to enter and how to use it, in compliance with the data protection rules that apply to you (for example the GDPR). We recommend entering only the information needed for the quote.</p>
+  </section>
+
   <section id="preventivi">
-    <h2 data-lang="it"><span class="num">03</span> Preventivi PDF</h2>
-    <h2 data-lang="en"><span class="num">03</span> PDF quotes</h2>
-    <p data-lang="it">La funzione di stima permette di generare un preventivo in PDF da mostrare a un potenziale cliente. Il file contiene <strong>solo il prezzo finale calcolato</strong>: nessun dato personale, tuo o di terzi, viene incluso. Il PDF viene creato localmente sul dispositivo e condiviso solo se scegli attivamente di farlo, tramite il menu di condivisione del sistema operativo (es. email, WhatsApp): l'app stessa non lo carica né lo invia altrove.</p>
-    <p data-lang="en">The estimate feature can generate a PDF quote to show a potential customer. The file contains <strong>only the final calculated price</strong>: no personal data, yours or anyone else's, is included. The PDF is created locally on your device and shared only if you actively choose to, through the operating system's share menu (e.g. email, WhatsApp) — the app itself never uploads or sends it anywhere.</p>
+    <h2 data-lang="it"><span class="num">04</span> Preventivi PDF</h2>
+    <h2 data-lang="en"><span class="num">04</span> PDF quotes</h2>
+    <p data-lang="it">La funzione di stima permette di generare un preventivo in PDF da mostrare a un cliente. Il file contiene il prezzo finale e i dettagli della stampa (materiali, ore, numero di stampe), mai i costi interni. Contiene inoltre i dati della tua attività, il logo, il nome del cliente e le note <strong>solo se li hai inseriti tu</strong>: i campi lasciati vuoti non vengono stampati.</p>
+    <p data-lang="en">The estimate feature can generate a PDF quote to show a customer. The file contains the final price and the print details (materials, hours, number of prints), never your internal costs. It also contains your business details, logo, customer name and notes <strong>only if you entered them</strong>: empty fields are not printed.</p>
+    <p data-lang="it">Il PDF viene creato localmente sul dispositivo e condiviso solo se scegli attivamente di farlo, tramite il menu di condivisione del sistema operativo (es. email, WhatsApp): l'app stessa non lo carica né lo invia altrove.</p>
+    <p data-lang="en">The PDF is created locally on your device and shared only if you actively choose to, through the operating system's share menu (e.g. email, WhatsApp): the app itself never uploads or sends it anywhere.</p>
+  </section>
+
+  <section id="backup">
+    <h2 data-lang="it"><span class="num">05</span> Backup ed esportazione</h2>
+    <h2 data-lang="en"><span class="num">05</span> Backup & export</h2>
+    <p data-lang="it">I tuoi dati possono uscire dal dispositivo in due soli modi, entrambi sotto il tuo controllo:</p>
+    <p data-lang="en">Your data can leave your device in only two ways, both under your control:</p>
+    <div class="card-list" data-lang="it">
+      <div class="item-card"><span class="badge"></span><div><b>Esportazione manuale</b><span>Da Impostazioni &gt; Backup puoi esportare tutti i dati dell'app (compresi preventivi, dati dei clienti, dati della tua attività e logo) in un file, che salvi o condividi dove preferisci tramite il menu di condivisione del sistema. Il file non viene inviato a noi: custodiscilo con cura, perché chiunque lo apra può leggerne il contenuto. Importando un file di backup, i dati presenti nell'app vengono sostituiti da quelli del file.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Backup automatico del sistema</b><span>Su Android l'app aderisce al backup automatico di Google: se è attivo sul tuo telefono, Android salva i dati dell'app nel tuo account Google e li ripristina quando reinstalli l'app o cambi dispositivo. Su iOS i dati dell'app sono inclusi nel backup iCloud del dispositivo, se attivo. Questi backup sono gestiti da Google e Apple secondo le rispettive informative privacy, e puoi disattivarli dalle impostazioni del telefono. Noi non abbiamo accesso a questi backup.</span></div></div>
+    </div>
+    <div class="card-list" data-lang="en">
+      <div class="item-card"><span class="badge"></span><div><b>Manual export</b><span>From Settings &gt; Backup you can export all the app's data (including quotes, customer details, your business details and logo) to a file, which you save or share wherever you like through the system share menu. The file is not sent to us: keep it safe, because anyone who opens it can read its contents. Importing a backup file replaces the data currently in the app with the data in the file.</span></div></div>
+      <div class="item-card"><span class="badge"></span><div><b>Automatic system backup</b><span>On Android the app takes part in Google's automatic backup: if it is enabled on your phone, Android saves the app's data to your Google account and restores it when you reinstall the app or change device. On iOS the app's data is included in the device's iCloud backup, if enabled. These backups are managed by Google and Apple under their own privacy policies, and you can turn them off in your phone settings. We have no access to these backups.</span></div></div>
+    </div>
   </section>
 
   <section id="terze-parti">
-    <h2 data-lang="it"><span class="num">04</span> Servizi di terze parti</h2>
-    <h2 data-lang="en"><span class="num">04</span> Third-party services</h2>
+    <h2 data-lang="it"><span class="num">06</span> Servizi di terze parti</h2>
+    <h2 data-lang="en"><span class="num">06</span> Third-party services</h2>
     <p data-lang="it">Alcune sezioni dell'app collegano a servizi esterni che non sono sotto il nostro controllo e che seguono le proprie informative privacy:</p>
     <p data-lang="en">Some sections of the app link to external services that are not under our control and follow their own privacy policies:</p>
     <div class="card-list" data-lang="it">
@@ -371,36 +405,40 @@
   </section>
 
   <section id="permessi">
-    <h2 data-lang="it"><span class="num">05</span> Permessi richiesti</h2>
-    <h2 data-lang="en"><span class="num">05</span> Permissions used</h2>
-    <p data-lang="it">L'app può richiedere l'accesso a internet, esclusivamente per caricare l'anteprima del canale Telegram e per usare la funzione di condivisione file del sistema quando esporti un preventivo. Nessun permesso viene usato per raccogliere dati su di te.</p>
-    <p data-lang="en">The app may request internet access, solely to load the Telegram channel preview and to use the system's file-sharing feature when you export a quote. No permission is used to collect data about you.</p>
+    <h2 data-lang="it"><span class="num">07</span> Permessi richiesti</h2>
+    <h2 data-lang="en"><span class="num">07</span> Permissions used</h2>
+    <p data-lang="it">L'app può richiedere l'accesso a internet, esclusivamente per caricare l'anteprima del canale Telegram e per usare la funzione di condivisione file del sistema quando esporti un preventivo o un backup.</p>
+    <p data-lang="en">The app may request internet access, solely to load the Telegram channel preview and to use the system's file-sharing feature when you export a quote or a backup.</p>
+    <p data-lang="it">Per scegliere il logo e il file di backup l'app usa i selettori di sistema (galleria foto e gestione file): ricevi la richiesta solo quando premi il relativo pulsante, e l'app riceve esclusivamente l'immagine o il file che selezioni tu, non il resto della galleria o dell'archivio. Su iOS il sistema può chiederti di autorizzare l'accesso alle foto. Nessun permesso viene usato per raccogliere dati su di te.</p>
+    <p data-lang="en">To choose the logo and the backup file the app uses the system pickers (photo gallery and file manager): they only open when you tap the related button, and the app only receives the image or file you select, not the rest of your gallery or storage. On iOS the system may ask you to allow access to your photos. No permission is used to collect data about you.</p>
   </section>
 
   <section id="minori">
-    <h2 data-lang="it"><span class="num">06</span> Utilizzo da parte di minori</h2>
-    <h2 data-lang="en"><span class="num">06</span> Children's privacy</h2>
-    <p data-lang="it">Poiché l'app non raccoglie alcun dato personale, può essere utilizzata anche da minori senza rischi particolari legati alla privacy.</p>
-    <p data-lang="en">Since the app does not collect any personal data, it can be safely used by minors with no particular privacy risk.</p>
+    <h2 data-lang="it"><span class="num">08</span> Utilizzo da parte di minori</h2>
+    <h2 data-lang="en"><span class="num">08</span> Children's privacy</h2>
+    <p data-lang="it">Poiché noi non raccogliamo alcun dato personale e tutto ciò che inserisci resta sul tuo dispositivo, l'app può essere utilizzata anche da minori senza rischi particolari legati alla privacy.</p>
+    <p data-lang="en">Since we do not collect any personal data and everything you enter stays on your device, the app can be safely used by minors with no particular privacy risk.</p>
   </section>
 
   <section id="conservazione">
-    <h2 data-lang="it"><span class="num">07</span> Conservazione e cancellazione dei dati</h2>
-    <h2 data-lang="en"><span class="num">07</span> Data retention & deletion</h2>
-    <p data-lang="it">Tutti i dati salvati dall'app restano sul tuo dispositivo finché non li elimini tu stesso, disinstalli l'app o cancelli i dati dell'app dalle impostazioni del telefono: in entrambi i casi vengono rimossi immediatamente e definitivamente, senza alcuna copia conservata da noi.</p>
-    <p data-lang="en">All data saved by the app stays on your device until you delete it yourself, uninstall the app, or clear the app's data from your phone settings: either action removes it immediately and permanently, with no copy retained by us.</p>
+    <h2 data-lang="it"><span class="num">09</span> Conservazione e cancellazione dei dati</h2>
+    <h2 data-lang="en"><span class="num">09</span> Data retention & deletion</h2>
+    <p data-lang="it">Tutti i dati salvati dall'app restano sul tuo dispositivo finché non li elimini tu stesso, disinstalli l'app o cancelli i dati dell'app dalle impostazioni del telefono: in tutti questi casi vengono rimossi immediatamente e definitivamente, senza alcuna copia conservata da noi. Lo storico preventivi conserva al massimo gli ultimi 1000 preventivi: i più vecchi vengono eliminati automaticamente.</p>
+    <p data-lang="en">All data saved by the app stays on your device until you delete it yourself, uninstall the app, or clear the app's data from your phone settings: any of these actions removes it immediately and permanently, with no copy retained by us. The quote history keeps at most the latest 1000 quotes: older ones are deleted automatically.</p>
+    <p data-lang="it">I PDF e i file di backup che hai condiviso o salvato altrove, e le copie nel backup automatico di Google o iCloud, non vengono cancellati disinstallando l'app: puoi eliminarli tu dove li hai salvati o dalle impostazioni di backup del tuo account.</p>
+    <p data-lang="en">PDFs and backup files you have shared or saved elsewhere, and the copies in Google's or iCloud's automatic backup, are not deleted when you uninstall the app: you can delete them yourself where you saved them or from your account's backup settings.</p>
   </section>
 
   <section id="modifiche">
-    <h2 data-lang="it"><span class="num">08</span> Modifiche a questa informativa</h2>
-    <h2 data-lang="en"><span class="num">08</span> Changes to this policy</h2>
+    <h2 data-lang="it"><span class="num">10</span> Modifiche a questa informativa</h2>
+    <h2 data-lang="en"><span class="num">10</span> Changes to this policy</h2>
     <p data-lang="it">Questa informativa può essere aggiornata nel tempo, ad esempio in seguito a nuove funzionalità dell'app. La data di "ultimo aggiornamento" in cima alla pagina riflette sempre la versione più recente.</p>
     <p data-lang="en">This policy may be updated over time, for example following new app features. The "last updated" date at the top of the page always reflects the most recent version.</p>
   </section>
 
   <section id="contatti">
-    <h2 data-lang="it"><span class="num">09</span> Contatti</h2>
-    <h2 data-lang="en"><span class="num">09</span> Contact</h2>
+    <h2 data-lang="it"><span class="num">11</span> Contatti</h2>
+    <h2 data-lang="en"><span class="num">11</span> Contact</h2>
     <p data-lang="it">Per domande su questa privacy policy o sul trattamento dei dati, scrivici a:</p>
     <p data-lang="en">For questions about this privacy policy or data handling, write to us at:</p>
     <div class="contact-card">
